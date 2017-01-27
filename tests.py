@@ -42,7 +42,7 @@ class Wind(unittest.TestCase):
         '''Test wind correction angle calculation'''
         pass
 
-class Conversionts(unittest.TestCase):
+class Conversions(unittest.TestCase):
     '''Unit conversions'''
 
     def test_cel_to_fahr(self):
