@@ -22,6 +22,33 @@ class TimeSpeedDistance(unittest.TestCase):
         distance = self.e6b.time(1, 60)
         self.assertEqual(60, distance)   
 
+    def test_true_airspeed(self):
+        pass
+
+    def test_climb_rate(self):
+        pass
+
+class Altitude(unittest.TestCase):
+    '''Altitude calculations'''
+
+    def test_pressure_altitude(self):
+        pass
+
+    def test_density_altitude(self):
+        pass
+
+    def test_true_altitude(self):
+        pass
+
+    def test_indicated_altitude(self):
+        pass
+
+    def test_required_climb_rate(self):
+        pass
+
+    def test_required_descent_rate(self):
+        pass
+
 class Fuel(unittest.TestCase):
     '''Fuel calculations'''
 
@@ -55,6 +82,12 @@ class Conversions(unittest.TestCase):
         pass
 
     def test_statute_to_nautical(self):
+        pass
+
+    def test_fuel_gallons_to_pounds(self):
+        pass
+
+    def test_fuel_pounds_to_gallons(self):
         pass
 
 if __name__ == '__main__':
