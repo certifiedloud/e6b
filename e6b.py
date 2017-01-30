@@ -1,3 +1,4 @@
+import math
 
 class E6B(object):
     def __init__(self):
@@ -23,3 +24,8 @@ class E6B(object):
 
     def statute_to_nautical(self, statute):
         return round(statute / 1.1507794, 2)
+
+    def wind_correction_angle(self, course, true_airspeed, wind_dir, wind_speed):
+        wca = (180/math.pi) * math.asin((wind_speed / true_airspeed) *
+            math.sin(math.pi * (wind_dir - course) / 180))
+        return round(wca, 0)

@@ -44,7 +44,8 @@ class Wind(unittest.TestCase):
 
     def test_wind_correction_angle(self):
         '''Test wind correction angle calculation'''
-        pass
+        wca = self.e6b.wind_correction_angle(360, 60, 330, 10)
+        self.assertEqual(wca, -5)
 
 class Conversions(unittest.TestCase):
     '''Unit conversions'''
