@@ -10,7 +10,7 @@ class TimeSpeedDistance(unittest.TestCase):
     def test_time(self):
         '''Test time calculations'''
         time = self.e6b.time(1, 60)
-        self.assertEqual(60, time)   
+        self.assertEqual(60, time)
 
     def test_speed(self):
         '''Test speed calculations'''
@@ -20,37 +20,12 @@ class TimeSpeedDistance(unittest.TestCase):
     def test_distance(self):
         '''Test distance calculations'''
         distance = self.e6b.time(1, 60)
-        self.assertEqual(60, distance)   
-
-    def test_true_airspeed(self):
-        pass
-
-    def test_climb_rate(self):
-        pass
-
-class Altitude(unittest.TestCase):
-    '''Altitude calculations'''
-
-    def test_pressure_altitude(self):
-        pass
-
-    def test_density_altitude(self):
-        pass
-
-    def test_true_altitude(self):
-        pass
-
-    def test_indicated_altitude(self):
-        pass
-
-    def test_required_climb_rate(self):
-        pass
-
-    def test_required_descent_rate(self):
-        pass
+        self.assertEqual(60, distance)
 
 class Fuel(unittest.TestCase):
     '''Fuel calculations'''
+    def setUp(self):
+        self.e6b = E6B()
 
     def test_fuel_endurance(self):
         '''Test fuel endurance calculation'''
@@ -64,6 +39,8 @@ class Fuel(unittest.TestCase):
 
 class Wind(unittest.TestCase):
     '''Test wind calculations'''
+    def setUp(self):
+        self.e6b = E6B()
 
     def test_wind_correction_angle(self):
         '''Test wind correction angle calculation'''
@@ -71,24 +48,24 @@ class Wind(unittest.TestCase):
 
 class Conversions(unittest.TestCase):
     '''Unit conversions'''
+    def setUp(self):
+        self.e6b = E6B()
 
     def test_cel_to_fahr(self):
-        pass
+        fahr = self.e6b.cel_to_fahr(0)
+        self.assertEqual(32, fahr)
 
     def test_fahr_to_cel(self):
-        pass
+        cel = self.e6b.fahr_to_cel(32)
+        self.assertEqual(0, cel)
 
     def test_nautical_to_statute(self):
-        pass
+        stat = self.e6b.nautical_to_statute(10)
+        self.assertEqual(11.51, stat)
 
     def test_statute_to_nautical(self):
-        pass
-
-    def test_fuel_gallons_to_pounds(self):
-        pass
-
-    def test_fuel_pounds_to_gallons(self):
-        pass
+        naut = self.e6b.statute_to_nautical(20)
+        self.assertEqual(17.38, naut)
 
 if __name__ == '__main__':
     unittest.main()
