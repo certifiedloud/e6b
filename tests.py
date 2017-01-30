@@ -47,6 +47,15 @@ class Wind(unittest.TestCase):
         wca = self.e6b.wind_correction_angle(360, 60, 330, 10)
         self.assertEqual(wca, -5)
 
+class Altitude(unittest.TestCase):
+    '''Altitude calculations'''
+    def setUp(self):
+        self.e6b = E6B()
+
+    def test_density_altitude(self):
+        da = self.e6b.density_altitude(5470, 35, 5)
+        self.assertEqual(da, 9034)
+
 class Conversions(unittest.TestCase):
     '''Unit conversions'''
     def setUp(self):

@@ -28,4 +28,9 @@ class E6B(object):
     def wind_correction_angle(self, course, true_airspeed, wind_dir, wind_speed):
         wca = (180/math.pi) * math.asin((wind_speed / true_airspeed) *
             math.sin(math.pi * (wind_dir - course) / 180))
+        # round to the nearest whole degree
         return round(wca, 0)
+
+    def density_altitude(self, pressure_alt, oat_cel, ISA):
+        # return 145442.16 * (1 - (17.326 * pressure_alt / 459.67 + oat_cel) ** 0.235)
+        return pressure_alt + 118.8 * (oat_cel - ISA)
