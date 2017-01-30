@@ -13,6 +13,9 @@ class E6B(object):
     def distance(self, time, speed):
         return speed * time
 
+    def true_airspeed(self, indicated_altitude, altimeter_setting, oat_cel, indicated_airspeed):
+        pass
+
     def cel_to_fahr(self, degrees_cel):
         return (degrees_cel * 9/5) + 32
 
